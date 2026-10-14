@@ -16,6 +16,7 @@ Built for [Claude Code](https://claude.com/claude-code) and any client that supp
 | --- | --- | --- |
 | 🔍 | [**code-teardown**](skills/code-teardown) | *"Is this code any good, and should I build on it?"* A critical teardown of a repo, a `.pyc` file or a Docker image: what is well built, what is not, and what depends on how you will use it. Every claim cites `file:line` and is checked against the real files. |
 | 🧾 | [**ai-evidence**](skills/ai-evidence) | *"Was this made or edited with AI?"* Every signal in an image, a text or a codebase (generator records, Content Credentials, EXIF, pasted chatbot residue, assistant files and commit trailers, style, what the model sees) gets a **0-10 score** and a **trust weight**; they are combined into two scored answers, *made by AI* and *edited or polished with AI*, with a confidence level. Text and code are much weaker ground than images, and the skill says so; using AI to write code is normal, and it only reports traces. |
+| 🧭 | [**architecture-mentor**](skills/architecture-mentor) | *"What should I build this with, where should it live, and why?"* Before building, it walks you through architecture, stack, data, hosting and cost one decision at a time, with the options, a "better if…" for each and a reasoned recommendation, and ends in a decisions document. After building, it explains what a project has and why. Uses a [graphify](https://github.com/safishamsi/graphify) graph as a map when one exists. Spanish. |
 
 ### What a result looks like
 
@@ -43,12 +44,13 @@ Both answer the same uncomfortable question: *how much should I trust something 
 
 ## Install
 
-As plugins (one marketplace, two plugins):
+As plugins (one marketplace, three plugins):
 
 ```bash
 claude plugin marketplace add Hermida95/second-opinion-skills
 claude plugin install code-teardown@second-opinion
 claude plugin install ai-evidence@second-opinion
+claude plugin install architecture-mentor@second-opinion
 ```
 
 Or copy a single skill into your skills folder (keep the folder name; it must match the skill's name):
@@ -88,6 +90,7 @@ Ideas and issues are welcome.
 skills/
   code-teardown/   SKILL.md, scripts/, references/, evals/, tests/, README.md ...
   ai-evidence/     SKILL.md, scripts/, references/, tests/, README.md ...
+  architecture-mentor/  SKILL.md, references/, README.md
 ```
 
 Each skill folder is self-contained, with its own README, tests, changelog and licence, so it can be installed or tested alone:

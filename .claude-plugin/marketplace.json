@@ -1,6 +1,6 @@
 {
   "name": "second-opinion",
-  "description": "Second Opinion: Agent Skills for using AI with open eyes. code-teardown gives an evidence-backed verdict on code you did not write; ai-evidence scores the evidence that an image, a text or a codebase was made or edited with AI.",
+  "description": "Second Opinion: Agent Skills for using AI with open eyes. code-teardown gives an evidence-backed verdict on code you did not write; ai-evidence scores the evidence that an image, a text or a codebase was made or edited with AI; architecture-mentor teaches you to decide stack, architecture and hosting before building.",
   "owner": {
     "name": "Miguel Garcia Hermida"
   },
@@ -14,6 +14,11 @@
       "name": "ai-evidence",
       "source": "./skills/ai-evidence",
       "description": "Weighs the evidence that an image, a text or a codebase was generated or edited with AI and reports scored evidence, not a verdict."
+    },
+    {
+      "name": "architecture-mentor",
+      "source": "./skills/architecture-mentor",
+      "description": "Teaches you to decide architecture, infrastructure and stack before building, and explains an existing project and why it is built that way."
     }
   ]
 }
